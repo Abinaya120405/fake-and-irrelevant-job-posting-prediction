@@ -24,9 +24,9 @@ app.config.from_object(Config)
 CORS(app)
 
 # ── Load ML model ──
-MODEL_PATH      =r"C:\Users\abi\Downloads\irrelevent\pac_model.pkl"
-VECTORIZER_PATH =r"C:\Users\abi\Downloads\irrelevent\tfidf_vectorizer.pkl"
-META_COLS_PATH  = r"C:\Users\abi\Downloads\irrelevent\meta_features.npy"
+MODEL_PATH      =r"pac_model.pkl"
+VECTORIZER_PATH =r"tfidf_vectorizer.pkl"
+META_COLS_PATH  = r"meta_features.npy"
 
 ml_model     = None
 ml_vectorizer = None
