@@ -318,7 +318,7 @@ def build_ml_engine():
     Returns: df, search_tfidf, search_matrix, pac_model, pac_vec, meta_cols
     """
     # ── Load dataset ──────────────────────────────────────────────────────────
-    df = pd.read_csv(CLEANED_CSV_PATH)
+    df = pd.read_csv(cleaned_jobs.csv)
 
     # Normalise label column
     if "fraudulent" in df.columns and "label" not in df.columns:
@@ -338,9 +338,9 @@ def build_ml_engine():
         df[col] = df[col].fillna("")
 
     # ── Load PAC model + vectorizer ───────────────────────────────────────────
-    pac_model = joblib.load(PAC_MODEL_PATH)
-    pac_vec   = joblib.load(VECTORIZER_PATH)
-    meta_cols = list(np.load(META_FEATURES_PATH, allow_pickle=True))
+    pac_model = joblib.load(pac_model.pkl)
+    pac_vec   = joblib.load(tfidf_vectorizer.pkl)
+    meta_cols = list(np.load(meta_features.pkl, allow_pickle=True))
 
     # ── Pre-classify every row using the PAC model ────────────────────────────
     combined_texts = create_combined_text_series(df)
