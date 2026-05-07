@@ -45,7 +45,7 @@ st.set_page_config(
 # ── Paths ─────────────────────────────────────────────────────────────────────
 _BASE            = os.path.dirname(os.path.abspath(__file__))
 CLEANED_CSV_PATH = os.path.join(_BASE, "cleaned_jobs.csv")
-DB_PATH          = os.path.join(_BASE, "schema.sql")
+DB_PATH          = os.path.join(_BASE, "truehire.db")
 
 # ── Label map ─────────────────────────────────────────────────────────────────
 # 0 = Real  |  1 = Fake  |  2 = Irrelevant
