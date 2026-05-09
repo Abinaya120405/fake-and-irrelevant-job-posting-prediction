@@ -355,10 +355,10 @@ def pac_badge(cls: int) -> str:
 
 def fraud_pill(val: int) -> str:
     if val == 0:
-        return "<span class='fpill fpill-real'>🟢 fraudulent = 0 &nbsp;→&nbsp; Real Job</span>"
+        return "<span class='fpill fpill-real'>🟢  &nbsp;→&nbsp; Real Job</span>"
     if val == 1:
-        return "<span class='fpill fpill-fake'>🔴 fraudulent = 1 &nbsp;→&nbsp; Fake Job</span>"
-    return "<span class='fpill fpill-irr'>🟡 Irrelevant</span>"
+        return "<span class='fpill fpill-fake'>🔴 &nbsp;→&nbsp; Fake Job</span>"
+    return "<span class='fpill fpill-irr'>🟡</span>"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
