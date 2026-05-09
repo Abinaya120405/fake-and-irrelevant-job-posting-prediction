@@ -42,7 +42,7 @@ st.set_page_config(
 
 # ── File paths ────────────────────────────────────────────────────────────────
 _BASE      = os.path.dirname(os.path.abspath(__file__))
-CSV_PATH   = os.path.join(_BASE, "cleaned_jobs.csv")
+CSV_PATH   = os.path.join(_BASE, "cleaned_jobs for project.csv")
 MODEL_PATH = os.path.join(_BASE, "pac_model.pkl")
 VEC_PATH   = os.path.join(_BASE, "tfidf_vectorizer.pkl")
 DB_PATH    = os.path.join(_BASE, "truehire.db")
