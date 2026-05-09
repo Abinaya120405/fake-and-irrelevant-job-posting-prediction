@@ -1084,22 +1084,6 @@ def page_dash_company():
                 st.session_state.user["name"]=name; st.success("✅ Profile saved!")
 
 
-# ─────────────────────────────────────────────────────────────────────────────
-# ROUTER
-# ─────────────────────────────────────────────────────────────────────────────
-PAGE = st.session_state.get("page","home")
-if st.session_state.get("sel") and PAGE!="jobs":
-    st.session_state.page="jobs"; PAGE="jobs"
-{
-    "home":     page_home,
-    "jobs":     page_jobs,
-    "login":    page_login,
-    "register": page_register,
-    "dash_sk":  page_dash_seeker,
-    "dash_co":  page_dash_company,
-    "admin":    page_admin,
-}.get(PAGE, page_home)()
-
 
 # ─────────────────────────────────────────────────────────────────────────────
 # ADMIN DASHBOARD — access via ?admin=1 in URL or secret key
@@ -1279,3 +1263,20 @@ def page_admin():
                             file_name="truehire_db_export.zip",
                             mime="application/zip", key="admin_zip_dl")
     c.close()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ROUTER
+# ─────────────────────────────────────────────────────────────────────────────
+PAGE = st.session_state.get("page","home")
+if st.session_state.get("sel") and PAGE!="jobs":
+    st.session_state.page="jobs"; PAGE="jobs"
+{
+    "home":     page_home,
+    "jobs":     page_jobs,
+    "login":    page_login,
+    "register": page_register,
+    "dash_sk":  page_dash_seeker,
+    "dash_co":  page_dash_company,
+    "admin":    page_admin,
+}.get(PAGE, page_home)()
