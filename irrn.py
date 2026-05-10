@@ -44,7 +44,7 @@ st.set_page_config(
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 _BASE            = os.path.dirname(os.path.abspath(__file__))
-CLEANED_CSV_PATH = os.path.join(_BASE, "cleaned_jobs for project.csv")
+CLEANED_CSV_PATH = os.path.join(_BASE, "cleaned_jobs.csv")
 DB_PATH          = os.path.join(_BASE, "truehire.db")
 
 # ── Label map ─────────────────────────────────────────────────────────────────
@@ -357,7 +357,7 @@ def fraud_pill(val: int) -> str:
     if val == 0:
         return "<span class='fpill fpill-real'>🟢  &nbsp;→&nbsp; Real Job</span>"
     if val == 1:
-        return "<span class='fpill fpill-fake'>🔴 &nbsp;→&nbsp; Fake Job</span>"
+        return "<span class='fpill fpill-fake'>🚩 &nbsp;→&nbsp; Fake Job</span>"
     return "<span class='fpill fpill-irr'>🟡</span>"
 
 
@@ -578,7 +578,7 @@ def page_home():
         <div class="hero-pill"><strong>{len(df):,}</strong> listings</div>
         <div class="hero-pill"><strong style="color:#4ade80">{real_n:,}</strong> real jobs</div>
         <div class="hero-pill"><strong style="color:#f87171">{fake_n:,}</strong> fake detected</div>
-        <div class="hero-pill"><strong>SGD/PAC</strong> model</div>
+        <div class="hero-pill"><strong>PAC</strong> model</div>
         <div class="hero-pill"><strong>TF-IDF</strong> search</div>
       </div>
     </div>""", unsafe_allow_html=True)
@@ -826,7 +826,7 @@ def detail_dataset(df, idx, pac_vec, META_COLS, scaler, model):
         {fraud_pill(csv_lbl)}
         <div style="font-size:.78rem;color:#6b6560;margin-top:.35rem;">
           CSV <code>fraudulent</code> column = <b>{csv_lbl}</b>
-          &nbsp;→&nbsp; {'🟢 Real Job' if csv_lbl==0 else '🔴 Fake Job'}
+          &nbsp;→&nbsp; {'🟢 Real Job' if csv_lbl==0 else '🚩 Fake Job'}
           &nbsp;&nbsp;&nbsp;
           PAC model output = <b>{cls}</b> → <b>{CLASS_LABEL[cls]}</b>
         </div>
