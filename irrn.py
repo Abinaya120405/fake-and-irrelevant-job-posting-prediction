@@ -578,7 +578,7 @@ def page_home():
         <div class="hero-pill"><strong>{len(df):,}</strong> listings</div>
         <div class="hero-pill"><strong style="color:#4ade80">{real_n:,}</strong> real jobs</div>
         <div class="hero-pill"><strong style="color:#f87171">{fake_n:,}</strong> fake detected</div>
-        <div class="hero-pill"><strong>PAC</strong> model</div>
+        <div class="hero-pill"><strong>SGD/PAC</strong> model</div>
         <div class="hero-pill"><strong>TF-IDF</strong> search</div>
       </div>
     </div>""", unsafe_allow_html=True)
